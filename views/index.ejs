@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/places.js@1.19.0"></script>
+
+    <title>Weather App</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div >
+                <% if(icon !== null)  {%>
+                <img class="icon-container1" src="http://openweathermap.org/img/wn/<%= icon %>@2x.png" alt="weather icon">
+                <% } %>
+                <% if(icon == null) {%> <img class="icon-container1" src="https://media.giphy.com/media/KV1s4kSJHaY3m/giphy.gif" alt="weather icon"> <% } %>
+            </div>
+        </div>
+        <div class="content">
+            <div class="general-information">
+                <div class="status" data-status>
+                    <% if(city !== null)  {%>
+                    <%= city %>
+                    <% } %> <% if(city == null) {%> Enter Location <% } %>
+                </div>
+                <div class="location" data-location>
+                    <% if(des !== null)  {%>
+                    <%= des %>
+                    <% } %> <% if(des == null) {%> To Find The Weather <% } %>
+                </div>
+            </div>
+            <div class="detail-section flex-container">
+                <div class="detail">
+                    <div class="title">Wind</div>
+                    <div class="value" data-wind>
+                        <% if(wind !== null)  {%>
+                        <%= wind %> &#x33A7;
+                        <% } %> <% if(wind == null) {%> TBD <% } %>
+                    </div>
+                </div>
+                <div class="detail">
+                    <div class="title">Temperature</div>
+                    <div class="value" data-temperature>
+                        <% if(temp !== null)  {%>
+                        <%= temp %>	&#8451
+                        <% } %> <% if(temp == null) {%> TBD  <% } %>
+                    </div>
+                </div>
+                <div class="detail">
+                    <div class="title">Humidity</div>
+                    <div class="value" data-precipitation>
+                        <% if(hum !== null)  {%>
+                        <%= hum %> &#37;
+                        <% } %> <% if(hum == null) {%> TBD <% } %> 
+                    </div>
+                </div>
+            </div>
+            <div class="city-search-container">
+            <form role="form" name="regform" action="/" method="post">
+            
+                <!-- <input type="text" name="city" class="city-search" id="city" placeholder="Enter Location" required> -->
+                <input type="search" name="city" id="address-input" placeholder="Enter Location" required />
+                <button type="submit" class="btn btn-dark btn-lg btn-block" id="sub">Find Weather</button>
+            </form>
+            </div>
+        </div>
+    </div>
+   
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+        <script>
+           var placesAutocomplete = places({
+                appId: 'plQ2HTHVGZLC',
+                apiKey: '<%= key %>',
+                container: document.querySelector('#address-input')
+            });
+
+        </script>
+</body>
+</html>

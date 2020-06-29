@@ -1,0 +1,130 @@
+body {
+    background: linear-gradient(to right, rgb(255, 167, 35), rgb(255, 97, 35));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 90%;
+    width: 1200px;
+    background-color: white;
+    box-shadow: 0 5px 10px black;
+    border-radius: 5px;
+    margin-top:2%;
+    margin-bottom: 5%;
+    padding: 0;
+}
+
+.content {
+    padding: 40px;
+    margin-top: 50px;
+}
+
+.header {
+    background-color: #222;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+
+.icon-container1 {
+    position: relative;
+    top: 90px;
+    padding: 20px;
+    background-color: white;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+}
+
+.general-information {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.status {
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.location {
+    font-size: 2rem;
+    font-weight: normal;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.detail-section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-basis: 0;
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.detail .title {
+    font-size: 2rem;
+    flex-grow: 1;
+    font-weight: bold;
+    color: #777;
+}
+
+.detail .value {
+    font-size: 2rem;
+    margin-top: 20px;
+}
+
+.city-search-container {
+    display: flex;
+    justify-content: center;
+}
+
+.city-search {
+    margin-top: 40px;
+    font-size: 2rem;
+    outline: none;
+    border: 1px solid #777;
+    border-radius: 5px;
+    padding: 10px 15px;
+    width: 100%;
+}
+::-webkit-input-placeholder {
+    text-align: center;
+}
+
+:-moz-placeholder {
+    /* Firefox 18- */
+    text-align: center;
+}
+
+::-moz-placeholder {
+    /* Firefox 19+ */
+    text-align: center;
+}
+
+:-ms-input-placeholder {
+    text-align: center;
+}
